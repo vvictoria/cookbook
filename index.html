@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cookbook">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CookBook</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/scss" href="styles/styles.scss">  <!-- NOT MAIN?! -->
+    <script type="text/javascript" src="scripts/sass.link.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+
+	<script type="text/javascript" src="/scripts/app.js"></script>
+
+	<base href="/">
+
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 header__search">
+                    search
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </div>
+                
+                <h1 class="col-md-8 text-uppercase text-center">
+                	<a href="#!/">Cookbook</a>
+                </h1>
+                <div class="col-md-2 header__account">
+                    your account
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="menu">
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-default text-uppercase" role="navigation">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="menu">
+                            <ul class="nav navbar-nav">
+
+								<li><a href="#">create recipe</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">my recipes<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Show all</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">appetizer</a></li>
+                                        <li><a href="#">breakfast and brunch</a></li>
+                                        <li><a href="#">dessert</a></li>
+                                        <li><a href="#">dinner</a></li>
+                                        <li><a href="#">drink</a></li>
+                                        <li><a href="#">salad</a></li>
+                                        <li><a href="#">sandwich</a></li>
+                                        <li><a href="#">side dish</a></li>
+                                        <li><a href="#">snack</a></li>
+                                        <li><a href="#">soup</a></li>
+                                        <li><a href="#">stew</a></li>
+                                    </ul>
+                                </li>
+                                
+                                <li><a href="#!/recipes">my favourites<span class="sr-only">(поточний)</span></a></li>
+
+                                <li><a href="#">my notes</a></li>
+                                <li><a href="#">liked recipes</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" ng-view>
+
+    </div>
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <p class="col-md-2"></p>
+                <h1 class="col-md-8 text-center">Bon appetit</h1>
+                <p class="col-md-2">&copy;&nbsp;Created by Vicky</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+body {
+    background-color: #f6faf9;
+    box-sizing: border-box;     /* DOESNT WORK */
+}
+
+
+.header, .footer {
+    background-color: #30202b;
+    color: #f6faf9;
+}
+.header__search, .header__account {
+    background-color: #d9c3b0;
+    //border-bottom: 1px solid #30202b;
+    color: #2d394d;
+}
+.header {
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+/* CONTENT HOME */
+.content__bg-quote {
+    width: 100%;
+    height: 430px;
+    background-image: url('../images/try4.jpg');
+    margin-bottom: 20px;
+    .content__quote {
+        height: 209px;
+        width: 360px;
+        color: #2d394d;
+        font-size: 30px;
+    }
+}
+.content__articles {
+    margin-top: 20px;
+    padding-left: 40px;
+    position: relative;
+    &:before {
+        content: ''; 
+        width: 40px;
+        background-color: #30202B;
+        color: #2d394d;
+        position: absolute;
+        top: 20px;
+        bottom: 20px;
+        left: 20px;
+        z-index: 1;
+
+    }
+    .row:first-child {
+        margin-bottom: 40px;
+    }
+    .article {
+        border: 1px solid black;
+        height: 120px;
+    }
+}
+.content__tops {
+    padding-right: 0;
+    margin-top: 20px;
+    position: relative;
+}
+.content__tops-over {
+    height: 40px;
+    background-color: #30202B;
+    color: white;
+    position: absolute;
+    top: -20px;
+    left: 120px;
+    right: 120px;
+    z-index: 1;
+}
+
+
+/* CONTENT RECIPES */
+
+.recipe {
+    height: 200px;
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    position: relative;
+    .over-top {
+        content: '';
+        height: 40px;
+        background-color: #D394AE;
+        color: #2d394d;
+        position: absolute;
+        top: -20px;
+        left: 20px;
+        right: 20px;
+        z-index: 1;
+    }
+    .over-bottom {
+        content: '';
+        height: 40px;
+        background-color: #D394AE;
+        color: #2d394d;
+        position: absolute;
+        bottom: -20px;
+        left: 40px;
+        right: 40px;
+        z-index: 1;
+    }
+}
+
+
+
+
+
+.footer {
+    margin-top: 20px;
+}
+
+
+/* overrides.scss*/
+.nav {
+    width: 100%;
+}
+.nav > li {
+    width: 20%; text-align: center;
+}
+/* variables */
+//$primary-bg-color: #30202b;
+//$primary-color: #f6faf9;
