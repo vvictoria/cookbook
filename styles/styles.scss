@@ -26,11 +26,16 @@ body {
     height: 430px;
     background-image: url('../images/try4.jpg');
     margin-bottom: 20px;
+    .col-md-4 {
+        height: 100%;
+        background: rgba(48, 10, 10, 0.4);
+    }
     .content__quote {
         height: 209px;
         width: 360px;
-        color: #2d394d;
+        color: white;
         font-size: 30px;
+        padding: 40px;
     }
 }
 .content__articles {

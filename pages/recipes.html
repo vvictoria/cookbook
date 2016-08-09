@@ -1,39 +1,18 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-3 recipe">
-            <div class="over-top">
-                <p>Pie with asparagus</p>
-                <p>Date:</p>
+        <div class="col-md-3" ng-repeat="recipe in recipes">
+            <div class="recipe">
+                <div class="over-top">
+                    <p>{{recipe.title}}</p>
+                    <p>Date: {{recipe.date}}</p>
+                </div>
+                <img src="{{recipe.image}}" alt="">
+                <div class="over-bottom">
+                    <span>Liked</span>
+                    <span>Tested</span>
+                </div>
             </div>
-            <img src="images/recipes/asperges.jpg" alt="">
-            <div class="over-bottom">
-                <span>Liked</span>
-                <span>Tested</span>
-            </div>
         </div>
-        <div class="col-md-3 recipe">
-            <div class="over-top"></div>
-            <div class="over-bottom"></div>
-        </div>
-        <div class="col-md-3 recipe">
-            <div class="over-top"></div>
-            <div class="over-bottom"></div>
-        </div>
-        <div class="col-md-3 recipe">
-            <div class="over-top"></div>
-            <div class="over-bottom"></div>
-        </div>
-        <div class="col-md-3 recipe">
-            <div class="over-top"></div>
-            <div class="over-bottom"></div>
-        </div>
-        <div class="col-md-3 recipe">
-            <div class="over-top"></div>
-            <div class="over-bottom"></div>
-        </div>
-        <div class="col-md-3 recipe">
-            <div class="over-top"></div>
-            <div class="over-bottom"></div>
-        </div>          
     </div>
+    <a href="#" class="btn btn-default" ng-click="addRecipe()">Add one</a>
 </div>
