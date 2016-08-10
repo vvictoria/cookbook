@@ -1,12 +1,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3" ng-repeat="recipe in recipes">
-            <div class="recipe">
+            <div class="recipe" ng-click="openRecipe()">
                 <div class="over-top">
                     <p>{{recipe.title}}</p>
-                    <p>Date: {{recipe.date}}</p>
+                    <p>Added: {{recipe.date}}</p>
                 </div>
-                <img src="{{recipe.image}}" alt="">
+                <img ng-src="{{recipe.image}}" alt="">
                 <div class="over-bottom">
                     <span>Liked</span>
                     <span>Tested</span>
@@ -14,5 +14,4 @@
             </div>
         </div>
     </div>
-    <a href="#" class="btn btn-default" ng-click="addRecipe()">Add one</a>
 </div>

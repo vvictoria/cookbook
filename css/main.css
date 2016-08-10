@@ -1,7 +1,5 @@
 body {
-  background-color: #f6faf9;
-  box-sizing: border-box;
-  /*DOESNT WORK */ }
+  background-color: #f6faf9; }
 
 .header, .footer {
   background-color: #30202b;
@@ -66,7 +64,7 @@ body {
   right: 120px;
   z-index: 1; }
 
-/* CONTENT RECIPES */
+/* CONTENT FAVOURITES */
 .recipe {
   height: 200px;
   border: 1px solid black;
@@ -99,15 +97,6 @@ body {
 .footer {
   margin-top: 20px; }
 
-/* overrides.scss*/
-.nav {
-  width: 100%; }
-
-.nav > li {
-  width: 20%;
-  text-align: center; }
-
-/* variables */
 .nav {
   width: 100%; }
 
