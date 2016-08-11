@@ -1,5 +1,8 @@
 body {
     background-color: $primary-color;
+    .inline-table {
+        display: inline-table;
+    }
     .table {
         display: table;
     }
@@ -19,8 +22,11 @@ body {
 }
 .header__search, .header__account {
     background-color: #d9c3b0;
-    //border-bottom: 1px solid #30202b;
     color: #2d394d;
+    margin-top: 40px;
+    margin-bottom: 2px;
+    border-radius: 2px;
+    height: 30px;
     span {
         float: right;
     }
@@ -39,6 +45,7 @@ body {
 
 .footer {
     margin-top: $spacing;
+    margin-bottom: 0;
     .author {
         color: rgba(255, 255, 255, .5);
         font-size: 12px;
@@ -77,7 +84,7 @@ body {
         bottom: $spacing;
         left: 0;
         z-index: 1;
-        padding-top: 40px;
+        padding-top: 30px;
         font-size: 16px;
     }
     .articles__first-row .article {
