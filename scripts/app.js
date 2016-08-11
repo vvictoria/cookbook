@@ -13,15 +13,13 @@ cookbook.controller('RecipesController', function($scope, $localStorage) {
         $localStorage.recipesList.push({
             title: $scope.name,
             date: convertDate(new Date()),
-            image: '/images/recipes/asperges.jpg'
+            image: '/images/recipes/praline.jpg'
         });
     };
 
 });
 
-$scope.openRecipe = function(){
-        
-};
+
 
 cookbook.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
@@ -42,19 +40,19 @@ cookbook.run(function($localStorage) {
     if (!$localStorage.recipesList) {
         $localStorage.recipesList = [
             {
-                title: 'Test 1',
-                date: 'yesterday',
+                title: 'Dessert with ice-cream',
+                date: '05/08/2016 18:32:45',
+                image: '/images/recipes/dessert.jpg'
+            },
+            {
+                title: 'Asparagus pie',
+                date: '07/08/2016 13:45:01',
                 image: '/images/recipes/asperges.jpg'
             },
             {
-                title: 'Test 2',
-                date: 'today',
-                image: '/images/recipes/asperges.jpg'
-            },
-            {
-                title: 'Test 3',
-                date: 'tomorrow',
-                image: '/images/recipes/asperges.jpg'
+                title: 'Burger with bacon',
+                date: '10/08/2016 15:12:37',
+                image: '/images/recipes/burger.png'
             },
         ];
     }

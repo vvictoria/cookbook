@@ -3,7 +3,7 @@
         <div class="col-md-3" ng-repeat="recipe in recipes">
             <div class="recipe" ng-click="openRecipe()">
                 <div class="over-top">
-                    <p>{{recipe.title}}</p>
+                    <p class="recipe-name">{{recipe.title}}</p>
                     <p>Added: {{recipe.date}}</p>
                 </div>
                 <img ng-src="{{recipe.image}}" alt="">
