@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-4">
+        <h1>Recipe Name:</h1>
+    </div>
+    <div class="col-md-8">
+        <h1>{{recipe.name}}</h1>
+    </div>    
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <p>Recipe Ingredients:</p>
+    </div>
+    <div class="col-md-8">
+        <p>{{recipe.ingredients}}</p>
+    </div>    
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <p>Recipe Preparation:</p>
+    </div>
+    <div class="col-md-8">
+        <p>{{recipe.preparation}}</p>
+    </div>    
+</div>
+<button class="btn btn-default" ng-click="edit()">Edit</button>

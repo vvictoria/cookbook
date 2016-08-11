@@ -3,7 +3,7 @@
         <form role="form">
                 <div class="form-group">
                     <label for="recipeName">Name of recipe</label>
-                    <input type="text" class="form-control" id="name" placeholder="Type the name" ng-model="name">
+                    <input type="text" class="form-control" placeholder="Type the name" ng-model="name">
                 </div>
               
                 <div class="form-group">
@@ -13,16 +13,16 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="recipeIngridients">Ingridients</label>
-                    <textarea class="form-control" rows="3" ng-model="ingridients" id="ingridients"></textarea>
+                    <label for="recipeIngredients">Ingredients</label>
+                    <textarea class="form-control" rows="3" ng-model="ingredients"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="recipePreparation">Preparation</label>
-                    <textarea class="form-control" rows="3" ng-model="preparation" id="preparation"></textarea>
+                    <textarea class="form-control" rows="3" ng-model="preparation"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-default save" ng-click="addRecipe()">Save</button> 
+                <button type="submit" class="btn btn-default save" ng-click="saveRecipe()">Save</button> 
         </form>
     </div>
 </div>

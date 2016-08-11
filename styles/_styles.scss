@@ -19,6 +19,9 @@ body {
     h1 {
         font-family: $headersfont;
     }
+    .logo {
+        margin: 15px 0;
+    }
 }
 .header__search, .header__account {
     background-color: #d9c3b0;
@@ -50,11 +53,14 @@ body {
         color: rgba(255, 255, 255, .5);
         font-size: 12px;
         text-align: right;
-        margin-top: 20px;
+        margin-top: 18px;
     }
 }
 
 /* CONTENT HOME */
+.content__bg {
+    margin-bottom: 0;
+}
 .content__bg-quote {
     width: 100%;
     height: 430px;
@@ -89,46 +95,49 @@ body {
         padding-top: 30px;
         font-size: 16px;
     }
-    .articles__first-row .article {
-        margin-bottom: 20px;
-    }
+    // .articles__first-row .article {
+    //     margin-bottom: 20px;
+    // }
+
     .article {
+        margin-bottom: 20px;
+
         border: 1px solid black;
         height: 140px;
-        padding-left: 0;
-        padding-right: 0;
         color: white;
         text-shadow: 1px 1px 1px black;
+        position: relative;
+
+        .image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-size: cover;
+            background-repeat: none;
+        }
 
         .cover {
             background: rgba(45, 57, 77, 0.6);
             position: absolute;
-            height: 100%;
             width: 100%;
+            height: 100%;
+            z-index: 2;
             font-size: 20px;
             text-align: center;
         }
     }
     .article-secrets {
         background-image: url('../images/news/14.jpg');
-        background-size: cover;
-        background-repeat: none;
-        position: relative;
     }
     .article-restaurants {
         background-image: url('../images/news/8.jpe');
-        background-size: cover;
-        background-repeat: none;
     }
     .article-healthy {
         background-image: url('../images/news/4.jpg');
-        background-size: cover;
-        background-repeat: none;
     }
     .article-trends {
         background-image: url('../images/news/3.jpg');
-        background-size: cover;
-        background-repeat: none;
     }
 }
 .content__tops {
@@ -137,16 +146,20 @@ body {
     position: relative;
     &-over {
         height: $spacing*2;
+        line-height: $spacing*2;
         background-color: $primary-bg-color;
         color: $primary-color;
         position: absolute;
         top: -$spacing;
-        left: 120px;
-        right: 120px;
+        left: 20%;
+        right: 20%;
         z-index: 1;
         letter-spacing: 4px;
         font-size: 16px;
     }
+}
+.carousel {
+
 }
 .carousel-caption {
     text-shadow: 1px 1px 1px black;
@@ -166,6 +179,9 @@ body {
     padding-right: $spacing;
     padding-left: $spacing;
     position: relative;
+    background-size: cover;
+    background-position: center;
+    display: block;
     &-name {
         margin-bottom: 0;
     }

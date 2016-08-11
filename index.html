@@ -12,11 +12,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Akronim' rel='stylesheet' type='text/css'>
-
-
-
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -32,17 +27,19 @@
     <div class="header">
         <div class="container">
             <div class="row">                
-                <div class="col-md-2 header__search inline-table">
+                <div class="col-md-2 col-sm-3 header__search inline-table">
                     <div class="cell">
                         search
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                     </div>
                 </div>
                 
-                <h1 class="col-md-8 text-uppercase text-center">
-                	<a href="/">Cookbook</a>
-                </h1>
-                <div class="col-md-2 header__account inline-table">
+                <div class="col-md-8 col-sm-6">
+                    <h1 class="text-uppercase text-center logo">
+                        <a href="#/">Cookbook</a>
+                    </h1>
+                </div>
+                <div class="col-md-2 col-sm-3 header__account inline-table">
                     <div class="cell">
                         your account
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
@@ -60,9 +57,9 @@
                         <div class="collapse navbar-collapse" id="menu">
                             <ul class="nav navbar-nav">
 
-								<li><a href="/create">create recipe</a></li>
+								<li><a href="#/create">create recipe</a></li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">my recipes<span class="caret"></span></a>
+                                    <a href="javascript:void()" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">my recipes<span class="caret"></span></a>
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="#">appetizer</a></li>
                                         <li><a href="#">breakfast and brunch</a></li>
@@ -78,7 +75,7 @@
                                     </ul>
                                 </li>
                                 
-                                <li><a href="/favourites">my favourites<span class="sr-only">(поточний)</span></a></li>
+                                <li><a href="#/favourites">my favourites<span class="sr-only">(поточний)</span></a></li>
 
                                 <li><a href="#">my notes</a></li>
                                 <li><a href="#">liked recipes</a></li>
@@ -99,9 +96,12 @@
     <div class="footer">
         <div class="container">
             <div class="row">
-                <p class="col-md-2"></p>
-                <h1 class="col-md-8 text-center">Bon appetit!</h1>
-                <p class="col-md-2 author">&copy;&nbsp;Created &amp; Designed<br/>by Victoria Viniarska</p>
+                <div class="col-xs-6 col-xs-offset-3">
+                    <h1 class="text-center logo">Bon appetit!</h1>
+                </div>
+                <div class="col-xs-3">
+                    <p class="author">&copy;&nbsp;Created &amp; Designed<br/>by Victoria Viniarska</p>
+                </div>
             </div>
         </div>
     </div>

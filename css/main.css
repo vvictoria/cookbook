@@ -1,16 +1,5 @@
 /*
-
-$mainfont: 'helveticaneue';
-$headersfont: 'TrebuchetMS';
-$notesfont: 'Arialmt';
-$additionalfont: 'Georgia Italic';
-$bgcolor: #F7F7F7;
-$bgcolor_articles: #FFF;
-$linkscolor: #547ACD;
 $border: 1px solid #EBEBEB;
-$sideborder: 1px solid #E3E3E3;
-$contrastcolor: #E979DE;
-$spacing: 20px;
 $mainfontsize: 13px;
 
 */
@@ -29,6 +18,8 @@ body {
   color: #f6faf9; }
   .header h1, .footer h1 {
     font-family: "Dancing Script", cursive; }
+  .header .logo, .footer .logo {
+    margin: 15px 0; }
 
 .header__search, .header__account {
   background-color: #d9c3b0;
@@ -54,9 +45,12 @@ body {
     color: rgba(255, 255, 255, 0.5);
     font-size: 12px;
     text-align: right;
-    margin-top: 20px; }
+    margin-top: 18px; }
 
 /* CONTENT HOME */
+.content__bg {
+  margin-bottom: 0; }
+
 .content__bg-quote {
   width: 100%;
   height: 430px;
@@ -88,39 +82,36 @@ body {
     z-index: 1;
     padding-top: 30px;
     font-size: 16px; }
-  .content__articles .articles__first-row .article {
-    margin-bottom: 20px; }
   .content__articles .article {
+    margin-bottom: 20px;
     border: 1px solid black;
     height: 140px;
-    padding-left: 0;
-    padding-right: 0;
     color: white;
-    text-shadow: 1px 1px 1px black; }
+    text-shadow: 1px 1px 1px black;
+    position: relative; }
+    .content__articles .article .image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-size: cover;
+      background-repeat: none; }
     .content__articles .article .cover {
       background: rgba(45, 57, 77, 0.6);
       position: absolute;
-      height: 100%;
       width: 100%;
+      height: 100%;
+      z-index: 2;
       font-size: 20px;
       text-align: center; }
   .content__articles .article-secrets {
-    background-image: url("../images/news/14.jpg");
-    background-size: cover;
-    background-repeat: none;
-    position: relative; }
+    background-image: url("../images/news/14.jpg"); }
   .content__articles .article-restaurants {
-    background-image: url("../images/news/8.jpe");
-    background-size: cover;
-    background-repeat: none; }
+    background-image: url("../images/news/8.jpe"); }
   .content__articles .article-healthy {
-    background-image: url("../images/news/4.jpg");
-    background-size: cover;
-    background-repeat: none; }
+    background-image: url("../images/news/4.jpg"); }
   .content__articles .article-trends {
-    background-image: url("../images/news/3.jpg");
-    background-size: cover;
-    background-repeat: none; }
+    background-image: url("../images/news/3.jpg"); }
 
 .content__tops {
   padding-right: 0;
@@ -128,12 +119,13 @@ body {
   position: relative; }
   .content__tops-over {
     height: 40px;
+    line-height: 40px;
     background-color: #30202b;
     color: #f6faf9;
     position: absolute;
     top: -20px;
-    left: 120px;
-    right: 120px;
+    left: 20%;
+    right: 20%;
     z-index: 1;
     letter-spacing: 4px;
     font-size: 16px; }
@@ -150,7 +142,10 @@ body {
   margin-bottom: 40px;
   padding-right: 20px;
   padding-left: 20px;
-  position: relative; }
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: block; }
   .recipe-name {
     margin-bottom: 0; }
   .recipe .over-top {

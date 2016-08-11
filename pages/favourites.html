@@ -1,17 +1,19 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-3" ng-repeat="recipe in recipes">
-            <div class="recipe" ng-click="openRecipe()">
+        <div class="col-lg-3 col-md-4 col-sm-6" ng-repeat="recipe in recipes">
+        <!--
+            <a ng-href="#/recipe/{{recipe.id}}" class="recipe" style="background-image: url({{recipe.image}})">
+        -->
+            <a href="javascript:void()" class="recipe" ng-click="openRecipe(recipe.id)" style="background-image: url({{recipe.image}})">
                 <div class="over-top">
-                    <p class="recipe-name">{{recipe.title}}</p>
+                    <p class="recipe-name">{{recipe.name}}</p>
                     <p>Added: {{recipe.date}}</p>
                 </div>
-                <img ng-src="{{recipe.image}}" alt="">
                 <div class="over-bottom">
                     <span>Liked</span>
                     <span>Tested</span>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>
