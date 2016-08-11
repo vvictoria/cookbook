@@ -15,11 +15,20 @@ cookbook.controller('RecipesController', function($scope, $localStorage) {
             date: convertDate(new Date()),
             image: '/images/recipes/praline.jpg'
         });
+        // $localStorage.recipesList.push({})
+        alert('saved');
+        document.getElementById('name').value = '';
+        document.getElementById('ingridients').value = '';
+        document.getElementById('preparation').value = '';
     };
 
 });
 
-
+cookbook.controller('FavouritesController', function($scope) {
+    $scope.openRecipe = function() {
+        window.location = '/recipe?id=${recipeId}'
+    };
+});
 
 cookbook.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {

@@ -52,7 +52,9 @@ body {
   margin-bottom: 0; }
   .footer .author {
     color: rgba(255, 255, 255, 0.5);
-    font-size: 12px; }
+    font-size: 12px;
+    text-align: right;
+    margin-top: 20px; }
 
 /* CONTENT HOME */
 .content__bg-quote {
@@ -171,7 +173,7 @@ body {
     z-index: 1; }
 
 /* CONTENT CREATE */
-.send {
+.save {
   background-color: #30202b;
   color: #f6faf9; }
 

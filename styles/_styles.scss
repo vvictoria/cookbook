@@ -49,6 +49,8 @@ body {
     .author {
         color: rgba(255, 255, 255, .5);
         font-size: 12px;
+        text-align: right;
+        margin-top: 20px;
     }
 }
 
@@ -190,7 +192,7 @@ body {
 }
 
 /* CONTENT CREATE */
-.send {
+.save {
     background-color: $primary-bg-color;
     color: $primary-color;
 }
