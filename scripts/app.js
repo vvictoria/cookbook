@@ -1,4 +1,46 @@
-var cookbook = angular.module('cookbook', ["ngRoute", "ngStorage"]);
+angular.module('appFilereader', []).directive('appFilereader', function($q) {
+    // http://stackoverflow.com/a/19121983
+    var slice = Array.prototype.slice;
+
+    return {
+        restrict: 'A',
+        require: '?ngModel',
+        link: function(scope, element, attrs, ngModel) {
+                if (!ngModel) return;
+
+                ngModel.$render = function() {};
+
+                element.bind('change', function(e) {
+                    var element = e.target;
+
+                    $q.all(slice.call(element.files, 0).map(readFile))
+                        .then(function(values) {
+                            if (element.multiple) ngModel.$setViewValue(values);
+                            else ngModel.$setViewValue(values.length ? values[0] : null);
+                        });
+
+                    function readFile(file) {
+                        var deferred = $q.defer();
+
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            deferred.resolve(e.target.result);
+                        };
+                        reader.onerror = function(e) {
+                            deferred.reject(e);
+                        };
+                        reader.readAsDataURL(file);
+
+                        return deferred.promise;
+                    }
+
+                }); //change
+
+            } //link
+    }; //return
+});
+
+var cookbook = angular.module('cookbook', ["ngRoute", "ngStorage", "appFilereader"]);
 
 function convertDate(inputFormat) {
   function pad(s) { return (s < 10) ? '0' + s : s; }
@@ -42,14 +84,14 @@ cookbook.run(function($localStorage) { // Можна перенести і вк�
 
 cookbook.controller('CreateRecipeController', function($scope, $localStorage, $location) {
     $scope.saveRecipe = function() {
-        if(($scope.name == null) || ($scope.ingredients == null) || ($scope.preparation == null)) {
+        if(($scope.name == null) || ($scope.ingredients == null) || ($scope.preparation == null) || ($scope.image == null)) {
             alert ('Fulfill all fields, please'); 
         } else {
             $localStorage.recipesList.push({
                 id: $localStorage.lastId + 1,
                 name: $scope.name,
                 date: convertDate(new Date()),
-                image: '/images/recipes/praline.jpg',
+                image: $scope.image,
                 ingredients: $scope.ingredients,
                 preparation: $scope.preparation
             });
@@ -86,6 +128,9 @@ cookbook.controller('EditRecipeController', function($scope, $localStorage, $rou
         recipe.name = $scope.name;
         recipe.ingredients = $scope.ingredients;
         recipe.preparation = $scope.preparation;
+        if ($scope.image) {
+            recipe.image = $scope.image;
+        }
         $location.path('/recipe/' + recipe.id);
     }
 });
