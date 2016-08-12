@@ -1,7 +1,6 @@
 angular.module('appFilereader', []).directive('appFilereader', function($q) {
     // http://stackoverflow.com/a/19121983
     var slice = Array.prototype.slice;
-
     return {
         restrict: 'A',
         require: '?ngModel',
@@ -75,7 +74,7 @@ cookbook.run(function($localStorage) {
                 id: 3,
                 name: 'Burger with bacon',
                 date: '10/08/2016 15:12:37',
-                image: '/images/recipes/burger.png',
+                image: '/images/recipes/burger.jpg',
                 ingredients: '2 pounds beef, black pepper, salt. Burger buns, cheese slices, lettuce, tomato slices, red onions, pickles. Ketchup, mustard, and mayo.',
                 preparation: 'On a large rimmed baking sheet, toss the cubes of beef and bacon together with a generous amount of cracked black pepper. Spread into a thin layer and freeze until very cold, at least one hour. Place the grinder attachments into the freezer to chill. ...',
                 history: []

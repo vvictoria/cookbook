@@ -1,30 +1,18 @@
 <div class="container">
     <div class="row space">
-        <div class="col-sm-4">
-            <p class="recipe-title"><b>Recipe Name:</b></p>
+        <div class="col-sm-4 text-center recipe-image">
+            <img src="{{recipe.image}}" alt="">
         </div>
-        <div class="col-sm-8 underline">
-            <div class="bg-recipe-name">
-                <h1>{{recipe.name}}</h1>
-            </div>
-        </div>    
-    </div>
-    <div class="row space">
-        <div class="col-sm-4">
+        <div class="col-sm-8">
+            <h1 class="underline">{{recipe.name}}</h1>
             <p><b>Recipe Ingredients:</b></p>
-        </div>
-        <div class="col-sm-8 underline">
-            <p>{{recipe.ingredients}}</p>
-        </div>    
-    </div>
-    <div class="row space">
-        <div class="col-sm-4">
+            <p class="underline">{{recipe.ingredients}}</p>
             <p><b>Recipe Preparation:</b></p>
-        </div>
-        <div class="col-sm-8 underline">
             <p>{{recipe.preparation}}</p>
-        </div>    
+            <div class="buttons">
+                <button class="btn btn-default edit" ng-click="edit()">Edit</button>
+                <button class="btn btn-default edit" ng-click="previousVersion()">Previous version</button>
+            </div> 
+        </div>   
     </div>
-    <button class="btn btn-default edit" ng-click="edit()">Edit</button>
-    <button class="btn btn-default edit" ng-click="previousVersion()">Previous version</button>
 </div>

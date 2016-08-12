@@ -13,50 +13,32 @@ html, body {
     }
 }
 
-.header, .footer {
-    background-color: $primary-bg-color;
-    color: $primary-color;
-    h1 {
-        font-family: $headersfont;
+.header {
+    &__search, &__account {
+        background-color: #d9c3b0;
+        color: $cover-color;
+        margin-top: 40px;
+        margin-bottom: 2px;
+        border-radius: 2px;
+        height: 30px;
     }
-    .logo {
-        margin: 15px 0;
-    }
-}
-.header__search, .header__account {
-    background-color: #d9c3b0;
-    color: #2d394d;
-    margin-top: 40px;
-    margin-bottom: 2px;
-    border-radius: 2px;
-    height: 30px;
     span {
         float: right;
     }
-}
-.header {
-    // position: relative;
-
     a {
         color: $primary-color;
         text-decoration: none;
     }
 }
-// .navbar-toggle {
-//     margin: 0;
-//     position: absolute;
-//     top: 5px;
-// }
-.navbar {
-    margin-bottom: 0;
-    li {
-        &:hover {
-            background-color: $menu-hover-color;
-        }
+
+.header, .footer {
+    @include main-colors();
+    h1 {
+        font-family: $headers-font;
     }
-}
-.content.ng-scope {
-    margin: 20px;
+    .logo {
+        margin: 15px 0;
+    }
 }
 
 .footer {
@@ -80,6 +62,18 @@ html, body {
     }
 }
 
+.navbar {
+    margin-bottom: 0;
+    li {
+        &:hover {
+            background-color: $menu-hover-color;
+        }
+    }
+}
+.content.ng-scope {
+    margin: 20px;
+}
+
 /* CONTENT HOME */
 .content__bg {
     margin-bottom: 0;
@@ -99,7 +93,7 @@ html, body {
         color: $primary-color;
         font-size: 46px;
         padding: $spacing*2;
-        font-family: $headersfont;
+        font-family: $headers-font;
     }
 }
 .content__articles {
@@ -107,9 +101,8 @@ html, body {
     padding-left: $spacing*2;
     position: relative;
     .over {
+        @include main-colors();
         width: $spacing*2;
-        background-color: $primary-bg-color;
-        color: $primary-color;
         position: absolute;
         left: 0;
         z-index: 1;
@@ -150,7 +143,7 @@ html, body {
         background-image: url('../images/news/1.jpg');
     }
     .article-restaurants {
-        background-image: url('../images/news/2.jpe');
+        background-image: url('../images/news/2.jpg');
     }
     .article-healthy {
         background-image: url('../images/news/3.jpg');
@@ -164,10 +157,9 @@ html, body {
     margin-top: $spacing;
     position: relative;
     &-over {
+        @include main-colors();
         height: $spacing*2;
         line-height: $spacing*2;
-        background-color: $primary-bg-color;
-        color: $primary-color;
         position: absolute;
         top: -$spacing;
         left: 20%;
@@ -179,18 +171,13 @@ html, body {
 }
 .carousel {
     margin-bottom: 20px;
-
-}
-.carousel-caption {
-    text-shadow: 1px 1px 1px black;
-    font-size: 20px;
-}
-.content__quote {
-    // text-shadow: 1px 1px 1px black;
+    &-caption {
+        text-shadow: 1px 1px 1px black;
+        font-size: 20px;
+    }
 }
 
 /* CONTENT FAVOURITES */
-
 .recipe {
     height: 200px;
     border: 1px solid black;
@@ -210,7 +197,7 @@ html, body {
         height: $spacing*2;
         line-height: $spacing*2;
         background-color: #d394ae;
-        color: #2d394d;
+        color: $cover-color;
         position: absolute;
         top: -$spacing;
         left: $spacing;
@@ -220,7 +207,7 @@ html, body {
     .over-bottom {
         height: $spacing*2;
         background-color: #d394ae;
-        color: #2d394d;
+        color: $cover-color;
         position: absolute;
         bottom: -$spacing;
         left: $spacing*2;
@@ -231,8 +218,7 @@ html, body {
 
 /* CONTENT CREATE */
 .save, .edit {
-    background-color: $primary-bg-color;
-    color: $primary-color;
+    @include main-colors();
 }
 .recipe-title {
     margin-top: 35px;
@@ -242,4 +228,32 @@ html, body {
 }
 .space {
     margin-bottom: 20px;
+}
+
+/* CONTENT RECIPE */
+.recipe-image {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .header__search, .header__account {
+        margin-top: 0;
+    }
+    .recipe-name, .recipe-date {
+        font-size: 2.5vw;
+    }
+    .ng-scope {
+        margin-bottom: 15%;
+    }
+    .content__tops-over {
+        letter-spacing: 1px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .nav {
+        width: 100%;
+    }
+    .nav > li {
+        width: 20%; text-align: center;
+    }
 }

@@ -1,8 +1,3 @@
-/*
-$border: 1px solid #EBEBEB;
-$mainfontsize: 13px;
-
-*/
 html, body {
   height: 100%;
   background-color: #f6faf9; }
@@ -14,14 +9,6 @@ html, body {
     display: table-cell;
     vertical-align: middle; }
 
-.header, .footer {
-  background-color: #30202b;
-  color: #f6faf9; }
-  .header h1, .footer h1 {
-    font-family: "Dancing Script", cursive; }
-  .header .logo, .footer .logo {
-    margin: 15px 0; }
-
 .header__search, .header__account {
   background-color: #d9c3b0;
   color: #2d394d;
@@ -29,20 +16,21 @@ html, body {
   margin-bottom: 2px;
   border-radius: 2px;
   height: 30px; }
-  .header__search span, .header__account span {
-    float: right; }
+
+.header span {
+  float: right; }
 
 .header a {
   color: #f6faf9;
   text-decoration: none; }
 
-.navbar {
-  margin-bottom: 0; }
-  .navbar li:hover {
-    background-color: #e7e7e7; }
-
-.content.ng-scope {
-  margin: 20px; }
+.header, .footer {
+  background-color: #30202b;
+  color: #f6faf9; }
+  .header h1, .footer h1 {
+    font-family: "Dancing Script", cursive; }
+  .header .logo, .footer .logo {
+    margin: 15px 0; }
 
 .footer {
   margin-bottom: 0;
@@ -61,6 +49,14 @@ html, body {
   .content-additional {
     overflow: auto;
     padding-bottom: 72px; }
+
+.navbar {
+  margin-bottom: 0; }
+  .navbar li:hover {
+    background-color: #e7e7e7; }
+
+.content.ng-scope {
+  margin: 20px; }
 
 /* CONTENT HOME */
 .content__bg {
@@ -87,9 +83,9 @@ html, body {
   padding-left: 40px;
   position: relative; }
   .content__articles .over {
-    width: 40px;
     background-color: #30202b;
     color: #f6faf9;
+    width: 40px;
     position: absolute;
     left: 0;
     z-index: 1;
@@ -122,7 +118,7 @@ html, body {
   .content__articles .article-secrets {
     background-image: url("../images/news/1.jpg"); }
   .content__articles .article-restaurants {
-    background-image: url("../images/news/2.jpe"); }
+    background-image: url("../images/news/2.jpg"); }
   .content__articles .article-healthy {
     background-image: url("../images/news/3.jpg"); }
   .content__articles .article-trends {
@@ -133,10 +129,10 @@ html, body {
   margin-top: 20px;
   position: relative; }
   .content__tops-over {
-    height: 40px;
-    line-height: 40px;
     background-color: #30202b;
     color: #f6faf9;
+    height: 40px;
+    line-height: 40px;
     position: absolute;
     top: -20px;
     left: 20%;
@@ -147,10 +143,9 @@ html, body {
 
 .carousel {
   margin-bottom: 20px; }
-
-.carousel-caption {
-  text-shadow: 1px 1px 1px black;
-  font-size: 20px; }
+  .carousel-caption {
+    text-shadow: 1px 1px 1px black;
+    font-size: 20px; }
 
 /* CONTENT FAVOURITES */
 .recipe {
@@ -201,9 +196,23 @@ html, body {
 .space {
   margin-bottom: 20px; }
 
-.nav {
-  width: 100%; }
+/* CONTENT RECIPE */
+.recipe-image {
+  margin-top: 20px; }
 
-.nav > li {
-  width: 20%;
-  text-align: center; }
+@media screen and (max-width: 768px) {
+  .header__search, .header__account {
+    margin-top: 0; }
+  .recipe-name, .recipe-date {
+    font-size: 2.5vw; }
+  .ng-scope {
+    margin-bottom: 15%; }
+  .content__tops-over {
+    letter-spacing: 1px; } }
+
+@media screen and (min-width: 768px) {
+  .nav {
+    width: 100%; }
+  .nav > li {
+    width: 20%;
+    text-align: center; } }

@@ -26,20 +26,25 @@
 <body>
     <div class="header">
         <div class="container">
-            <div class="row">                
-                <div class="col-md-2 col-sm-3 header__search inline-table">
+            <div class="row">  
+                <div class="hidden-xs col-sm-3 col-md-2 header__search inline-table">
+                    <div class="cell">
+                        search
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </div>
+                </div>                
+                <div class="col-xs-12 col-sm-6 col-md-8">
+                    <h1 class="text-uppercase text-center logo">
+                        <a href="#/">Cookbook</a>
+                    </h1>
+                </div>
+                <div class="col-xs-4 hidden-sm hidden-md hidden-lg header__search inline-table">
                     <div class="cell">
                         search
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                     </div>
                 </div>
-                
-                <div class="col-md-8 col-sm-6">
-                    <h1 class="text-uppercase text-center logo">
-                        <a href="#/">Cookbook</a>
-                    </h1>
-                </div>
-                <div class="col-md-2 col-sm-3 header__account inline-table">
+                <div class="col-xs-4 col-xs-offset-4 col-sm-3 col-sm-offset-0 col-md-2 col-md-offset-0 header__account inline-table ">
                     <div class="cell">
                         your account
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
@@ -53,55 +58,45 @@
         <div class="container">
             <div class="row">
                 <nav class="navbar navbar-default" role="navigation">
-                    <!-- <div class="container-fluid"> -->
-                        <!-- Бренд та перемикач згруповані для кращого відображення на мобільних пристроях -->
-                        <!-- <div class="navbar-header"> -->
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <!-- <a class="navbar-brand" href="#">Бренд</a> -->
-                        <!-- </div> -->
-
-                        <div class="collapse navbar-collapse" id="menu">
-                            <ul class="nav navbar-nav text-uppercase">
-                                <li><a href="#/create">create recipe</a></li>
-                                <li class="dropdown">
-                                    <a href="javascript:void()" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">my recipes<span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="javascript:void()">appetizer</a></li>
-                                        <li><a href="javascript:void()">breakfast and brunch</a></li>
-                                        <li><a href="javascript:void()">dessert</a></li>
-                                        <li><a href="javascript:void()">dinner</a></li>
-                                        <li><a href="javascript:void()">drink</a></li>
-                                        <li><a href="javascript:void()">salad</a></li>
-                                        <li><a href="javascript:void()">sandwich</a></li>
-                                        <li><a href="javascript:void()">side dish</a></li>
-                                        <li><a href="javascript:void()">snack</a></li>
-                                        <li><a href="javascript:void()">soup</a></li>
-                                        <li><a href="javascript:void()">stew</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#/favourites">my favourites<span class="sr-only">(поточний)</span></a></li>
-                                <li><a href="javascript:void()">my notes</a></li>
-                                <li><a href="javascript:void()">liked recipes</a></li>
-                            </ul>
-                        </div>
-                    <!-- </div> -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="menu">
+                        <ul class="nav navbar-nav text-uppercase">
+                            <li><a href="#/create">create recipe</a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void()" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">my recipes<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="javascript:void()">appetizer</a></li>
+                                    <li><a href="javascript:void()">breakfast and brunch</a></li>
+                                    <li><a href="javascript:void()">dessert</a></li>
+                                    <li><a href="javascript:void()">dinner</a></li>
+                                    <li><a href="javascript:void()">drink</a></li>
+                                    <li><a href="javascript:void()">salad</a></li>
+                                    <li><a href="javascript:void()">sandwich</a></li>
+                                    <li><a href="javascript:void()">side dish</a></li>
+                                    <li><a href="javascript:void()">snack</a></li>
+                                    <li><a href="javascript:void()">soup</a></li>
+                                    <li><a href="javascript:void()">stew</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#/favourites">my favourites<span class="sr-only">(поточний)</span></a></li>
+                            <li><a href="javascript:void()">my notes</a></li>
+                            <li><a href="javascript:void()">liked recipes</a></li>
+                        </ul>
+                    </div>
                 </nav>
-
             </div>
         </div>
     </div>
 
     <div class="content" ng-view>
-        <div class="content-additional">
-            
+        <div class="content-additional"> 
         </div>
     </div>
-
 
     <div class="footer">
         <div class="container">
