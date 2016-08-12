@@ -36,11 +36,15 @@ html, body {
   color: #f6faf9;
   text-decoration: none; }
 
-.navbar li:hover {
-  background-color: #e7e7e7; }
+.navbar {
+  margin-bottom: 0; }
+  .navbar li:hover {
+    background-color: #e7e7e7; }
+
+.content.ng-scope {
+  margin: 20px; }
 
 .footer {
-  margin-top: 20px;
   margin-bottom: 0;
   position: relative;
   margin-top: -72px;
@@ -116,13 +120,13 @@ html, body {
       font-size: 20px;
       text-align: center; }
   .content__articles .article-secrets {
-    background-image: url("../images/news/14.jpg"); }
+    background-image: url("../images/news/1.jpg"); }
   .content__articles .article-restaurants {
-    background-image: url("../images/news/8.jpe"); }
+    background-image: url("../images/news/2.jpe"); }
   .content__articles .article-healthy {
-    background-image: url("../images/news/4.jpg"); }
-  .content__articles .article-trends {
     background-image: url("../images/news/3.jpg"); }
+  .content__articles .article-trends {
+    background-image: url("../images/news/4.jpg"); }
 
 .content__tops {
   padding-right: 0;
@@ -161,9 +165,11 @@ html, body {
   background-position: center;
   display: block; }
   .recipe-name {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    font-size: 16px; }
   .recipe .over-top {
     height: 40px;
+    line-height: 40px;
     background-color: #d394ae;
     color: #2d394d;
     position: absolute;
@@ -182,12 +188,18 @@ html, body {
     z-index: 1; }
 
 /* CONTENT CREATE */
-.save {
+.save, .edit {
   background-color: #30202b;
   color: #f6faf9; }
 
 .recipe-title {
   margin-top: 35px; }
+
+.underline {
+  border-bottom: 1px solid #30202b; }
+
+.space {
+  margin-bottom: 20px; }
 
 .nav {
   width: 100%; }

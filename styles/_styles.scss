@@ -35,19 +35,31 @@ html, body {
     }
 }
 .header {
+    // position: relative;
+
     a {
         color: $primary-color;
         text-decoration: none;
     }
 }
-.navbar li {
-    &:hover {
-        background-color: $menu-hover-color;
+// .navbar-toggle {
+//     margin: 0;
+//     position: absolute;
+//     top: 5px;
+// }
+.navbar {
+    margin-bottom: 0;
+    li {
+        &:hover {
+            background-color: $menu-hover-color;
+        }
     }
+}
+.content.ng-scope {
+    margin: 20px;
 }
 
 .footer {
-    margin-top: $spacing;
     margin-bottom: 0;
     position: relative;
     margin-top: -72px;
@@ -63,7 +75,7 @@ html, body {
 .content {
     min-height: 100%;
     &-additional {
-        overflow:auto;
+        overflow: auto;
         padding-bottom: 72px;
     }
 }
@@ -135,16 +147,16 @@ html, body {
         }
     }
     .article-secrets {
-        background-image: url('../images/news/14.jpg');
+        background-image: url('../images/news/1.jpg');
     }
     .article-restaurants {
-        background-image: url('../images/news/8.jpe');
+        background-image: url('../images/news/2.jpe');
     }
     .article-healthy {
-        background-image: url('../images/news/4.jpg');
+        background-image: url('../images/news/3.jpg');
     }
     .article-trends {
-        background-image: url('../images/news/3.jpg');
+        background-image: url('../images/news/4.jpg');
     }
 }
 .content__tops {
@@ -192,9 +204,11 @@ html, body {
     display: block;
     &-name {
         margin-bottom: 0;
+        font-size: 16px; 
     }
     .over-top {
         height: $spacing*2;
+        line-height: $spacing*2;
         background-color: #d394ae;
         color: #2d394d;
         position: absolute;
@@ -216,10 +230,16 @@ html, body {
 }
 
 /* CONTENT CREATE */
-.save {
+.save, .edit {
     background-color: $primary-bg-color;
     color: $primary-color;
 }
 .recipe-title {
     margin-top: 35px;
+}
+.underline {
+    border-bottom: 1px solid $primary-bg-color;
+}
+.space {
+    margin-bottom: 20px;
 }

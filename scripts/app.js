@@ -58,24 +58,24 @@ cookbook.run(function($localStorage) { // Можна перенести і вк�
                 name: 'Dessert with ice-cream',
                 date: '05/08/2016 18:32:45',
                 image: '/images/recipes/dessert.jpg',
-                ingredients: 'spam',
-                preparation: 'spam'
+                ingredients: '4 cups of vanilla ice cream, 2 cups of peach ice cream, 3 large ripe peaches, peeled and cut into eighths, 2 tablespoons unsalted butter, 2 tablespoons brown sugar + a pinch of Cardamom and a pinch of salt',
+                preparation: ' For Terrine: Line a small loaf pan with plastic wrap. Scoop 2 cups vanilla ice cream into the bottom and smooth to form a layer. Refrigerate 30 minutes. Repeat with the peach ice cream followed by the remaining vanilla ice cream, freezing 30 minutes between layers. Once complete, freeze for a minimum of 4 hours to overnight. For Peaches: Melt butter in a skillet or saute pan over medium high heat. Add sugar, peaches, a pinch of cardamom and salt. Saute 3 to 5 minutes until soft and coated. To serve, remove terrine from freezer, submerge in warm water to release it, turn out on a serving platter and top with the peach mixture. Slice and serve.'
             },
             {
                 id: 2,
                 name: 'Asparagus pie',
                 date: '07/08/2016 13:45:01',
                 image: '/images/recipes/asperges.jpg',
-                ingredients: 'spam',
-                preparation: 'spam'
+                ingredients: 'flour, salt, sugar, black pepper, thyme, milk, eggs, lemon zest, asparagus, trimmed and cut into 2-inch pieces, salt, butter ',
+                preparation: 'Preheat oven to 350 degrees F (175 degrees C). Butter the inside edges of a 2-quart casserole dish. Stir flour, 1/2 teaspoon salt, sugar, black pepper, fresh thyme, and milk together in a large bowl until smooth. Whisk eggs and lemon zest into milk mixture to form a smooth batter. ...'
             },
             {
                 id: 3,
                 name: 'Burger with bacon',
                 date: '10/08/2016 15:12:37',
                 image: '/images/recipes/burger.png',
-                ingredients: 'spam',
-                preparation: 'spam'
+                ingredients: '2 pounds beef, black pepper, salt. Burger buns, cheese slices, lettuce, tomato slices, red onions, pickles. Ketchup, mustard, and mayo.',
+                preparation: 'On a large rimmed baking sheet, toss the cubes of beef and bacon together with a generous amount of cracked black pepper. Spread into a thin layer and freeze until very cold, at least one hour. Place the grinder attachments into the freezer to chill. ...'
             },
         ];
         $localStorage.lastId = 3;
