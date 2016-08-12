@@ -48,10 +48,10 @@ function convertDate(inputFormat) {
   return pad(d.getDate()) + '/' + pad(d.getMonth()+1) + '/' + d.getFullYear() + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
 };
 
-cookbook.run(function($localStorage) { // Можна перенести і вкінець, бо ств-ся при завантаж сайту?
+cookbook.run(function($localStorage) {
     window.$localStorage = $localStorage;
 
-    if (!$localStorage.recipesList) { // only first time
+    if (!$localStorage.recipesList) {
         $localStorage.recipesList = [
             {
                 id: 1,
@@ -59,7 +59,8 @@ cookbook.run(function($localStorage) { // Можна перенести і вк�
                 date: '05/08/2016 18:32:45',
                 image: '/images/recipes/dessert.jpg',
                 ingredients: '4 cups of vanilla ice cream, 2 cups of peach ice cream, 3 large ripe peaches, peeled and cut into eighths, 2 tablespoons unsalted butter, 2 tablespoons brown sugar + a pinch of Cardamom and a pinch of salt',
-                preparation: ' For Terrine: Line a small loaf pan with plastic wrap. Scoop 2 cups vanilla ice cream into the bottom and smooth to form a layer. Refrigerate 30 minutes. Repeat with the peach ice cream followed by the remaining vanilla ice cream, freezing 30 minutes between layers. Once complete, freeze for a minimum of 4 hours to overnight. For Peaches: Melt butter in a skillet or saute pan over medium high heat. Add sugar, peaches, a pinch of cardamom and salt. Saute 3 to 5 minutes until soft and coated. To serve, remove terrine from freezer, submerge in warm water to release it, turn out on a serving platter and top with the peach mixture. Slice and serve.'
+                preparation: ' For Terrine: Line a small loaf pan with plastic wrap. Scoop 2 cups vanilla ice cream into the bottom and smooth to form a layer. Refrigerate 30 minutes. Repeat with the peach ice cream followed by the remaining vanilla ice cream, freezing 30 minutes between layers. Once complete, freeze for a minimum of 4 hours to overnight. For Peaches: Melt butter in a skillet or saute pan over medium high heat. Add sugar, peaches, a pinch of cardamom and salt. Saute 3 to 5 minutes until soft and coated. To serve, remove terrine from freezer, submerge in warm water to release it, turn out on a serving platter and top with the peach mixture. Slice and serve.',
+                history: []
             },
             {
                 id: 2,
@@ -67,7 +68,8 @@ cookbook.run(function($localStorage) { // Можна перенести і вк�
                 date: '07/08/2016 13:45:01',
                 image: '/images/recipes/asperges.jpg',
                 ingredients: 'flour, salt, sugar, black pepper, thyme, milk, eggs, lemon zest, asparagus, trimmed and cut into 2-inch pieces, salt, butter ',
-                preparation: 'Preheat oven to 350 degrees F (175 degrees C). Butter the inside edges of a 2-quart casserole dish. Stir flour, 1/2 teaspoon salt, sugar, black pepper, fresh thyme, and milk together in a large bowl until smooth. Whisk eggs and lemon zest into milk mixture to form a smooth batter. ...'
+                preparation: 'Preheat oven to 350 degrees F (175 degrees C). Butter the inside edges of a 2-quart casserole dish. Stir flour, 1/2 teaspoon salt, sugar, black pepper, fresh thyme, and milk together in a large bowl until smooth. Whisk eggs and lemon zest into milk mixture to form a smooth batter. ...',
+                history: []
             },
             {
                 id: 3,
@@ -75,7 +77,8 @@ cookbook.run(function($localStorage) { // Можна перенести і вк�
                 date: '10/08/2016 15:12:37',
                 image: '/images/recipes/burger.png',
                 ingredients: '2 pounds beef, black pepper, salt. Burger buns, cheese slices, lettuce, tomato slices, red onions, pickles. Ketchup, mustard, and mayo.',
-                preparation: 'On a large rimmed baking sheet, toss the cubes of beef and bacon together with a generous amount of cracked black pepper. Spread into a thin layer and freeze until very cold, at least one hour. Place the grinder attachments into the freezer to chill. ...'
+                preparation: 'On a large rimmed baking sheet, toss the cubes of beef and bacon together with a generous amount of cracked black pepper. Spread into a thin layer and freeze until very cold, at least one hour. Place the grinder attachments into the freezer to chill. ...',
+                history: []
             },
         ];
         $localStorage.lastId = 3;
@@ -93,15 +96,16 @@ cookbook.controller('CreateRecipeController', function($scope, $localStorage, $l
                 date: convertDate(new Date()),
                 image: $scope.image,
                 ingredients: $scope.ingredients,
-                preparation: $scope.preparation
+                preparation: $scope.preparation,
+                history: []
             });
-            $localStorage.lastId++;
-
+            
+            $localStorage.lastId++;            
+            
             alert('Your recipe is saved');
             $location.path('/recipe/' + $localStorage.lastId);
         };
     }
-
 });
 
 cookbook.controller('RecipesListController', function($scope, $localStorage, $location) {
@@ -125,6 +129,12 @@ cookbook.controller('EditRecipeController', function($scope, $localStorage, $rou
     $scope.ingredients = recipe.ingredients;
     $scope.preparation = recipe.preparation; 
     $scope.saveRecipe = function() {
+        recipe.history.push({
+            name: recipe.name,
+            ingredients: recipe.ingredients,
+            preparation: recipe.preparation,
+            image: recipe.image,
+        });
         recipe.name = $scope.name;
         recipe.ingredients = $scope.ingredients;
         recipe.preparation = $scope.preparation;
@@ -141,8 +151,15 @@ cookbook.controller('ViewRecipeController', function($scope, $localStorage, $rou
     $scope.edit = function() {
         $location.path('/recipe/' + recipe.id + '/edit');
     }
+    $scope.previousVersion = function () {
+        var previousVersion = recipe.history[recipe.history.length - 1];
+        recipe.name = previousVersion.name;
+        recipe.ingredients = previousVersion.ingredients;
+        recipe.preparation = previousVersion.preparation;
+        recipe.image = previousVersion.image;  
+        recipe.history.pop();
+    }
 });
-
 
 cookbook.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
@@ -163,28 +180,5 @@ cookbook.config(["$routeProvider", "$locationProvider", function($routeProvider,
     $routeProvider.when('/recipe/:id/edit', {
         templateUrl: '/pages/create.html',
         controller: 'EditRecipeController'
-    });
-
-
-    // $routeProvider.when('/articles/:category/:date/:id', {
-    //     templateUrl: '/pages/create.html',
-    //     controller: 'ViewRecipeController'
-    // });
-
-
-    // site.com/articles/news/12-10-2009/123897
-
-
-
-    // {
-    //     category: "news",
-    //     date: "12-10-2009",
-    //     id: "123897"
-    // }
-
-
-
-    // $locationProvider.html5Mode(false).hashPrefix('!');
+    }); 
 }]);
-
-// scope обмежужється одним шаблоном - r. 1 контроллер на 1 html В ОДИН МОМЕНТ ЧАСУ
