@@ -3,13 +3,14 @@ $border: 1px solid #EBEBEB;
 $mainfontsize: 13px;
 
 */
-body {
+html, body {
+  height: 100%;
   background-color: #f6faf9; }
-  body .inline-table {
+  html .inline-table, body .inline-table {
     display: inline-table; }
-  body .table {
+  html .table, body .table {
     display: table; }
-  body .cell {
+  html .cell, body .cell {
     display: table-cell;
     vertical-align: middle; }
 
@@ -40,12 +41,22 @@ body {
 
 .footer {
   margin-top: 20px;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  position: relative;
+  margin-top: -72px;
+  clear: both;
+  padding-top: 5px; }
   .footer .author {
     color: rgba(255, 255, 255, 0.5);
     font-size: 12px;
     text-align: right;
     margin-top: 18px; }
+
+.content {
+  min-height: 100%; }
+  .content-additional {
+    overflow: auto;
+    padding-bottom: 72px; }
 
 /* CONTENT HOME */
 .content__bg {
@@ -76,11 +87,11 @@ body {
     background-color: #30202b;
     color: #f6faf9;
     position: absolute;
-    top: 20px;
-    bottom: 20px;
     left: 0;
     z-index: 1;
-    padding-top: 30px;
+    margin-top: 35px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     font-size: 16px; }
   .content__articles .article {
     margin-bottom: 20px;
@@ -130,6 +141,9 @@ body {
     letter-spacing: 4px;
     font-size: 16px; }
 
+.carousel {
+  margin-bottom: 20px; }
+
 .carousel-caption {
   text-shadow: 1px 1px 1px black;
   font-size: 20px; }
@@ -171,6 +185,9 @@ body {
 .save {
   background-color: #30202b;
   color: #f6faf9; }
+
+.recipe-title {
+  margin-top: 35px; }
 
 .nav {
   width: 100%; }

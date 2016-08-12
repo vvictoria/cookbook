@@ -1,4 +1,5 @@
-body {
+html, body {
+    height: 100%;
     background-color: $primary-color;
     .inline-table {
         display: inline-table;
@@ -11,7 +12,6 @@ body {
         vertical-align: middle;
     }
 }
-
 
 .header, .footer {
     background-color: $primary-bg-color;
@@ -49,11 +49,22 @@ body {
 .footer {
     margin-top: $spacing;
     margin-bottom: 0;
+    position: relative;
+    margin-top: -72px;
+    clear: both;
+    padding-top: 5px;
     .author {
         color: rgba(255, 255, 255, .5);
         font-size: 12px;
         text-align: right;
         margin-top: 18px;
+    }
+}
+.content {
+    min-height: 100%;
+    &-additional {
+        overflow:auto;
+        padding-bottom: 72px;
     }
 }
 
@@ -88,20 +99,16 @@ body {
         background-color: $primary-bg-color;
         color: $primary-color;
         position: absolute;
-        top: $spacing;
-        bottom: $spacing;
         left: 0;
         z-index: 1;
-        padding-top: 30px;
+        margin-top: 35px;
+        padding-top: 15px;
+        padding-bottom: 15px;
         font-size: 16px;
     }
-    // .articles__first-row .article {
-    //     margin-bottom: 20px;
-    // }
 
     .article {
         margin-bottom: 20px;
-
         border: 1px solid black;
         height: 140px;
         color: white;
@@ -159,6 +166,7 @@ body {
     }
 }
 .carousel {
+    margin-bottom: 20px;
 
 }
 .carousel-caption {
@@ -211,4 +219,7 @@ body {
 .save {
     background-color: $primary-bg-color;
     color: $primary-color;
+}
+.recipe-title {
+    margin-top: 35px;
 }
