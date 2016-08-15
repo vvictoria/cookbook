@@ -162,7 +162,7 @@ cookbook.controller('ViewRecipeController', function($scope, $localStorage, $rou
 
 cookbook.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
-        templateUrl: '/pages/home.html'
+        templateUrl: 'pages/home.html'
     });
     $routeProvider.when('/favourites', {
         templateUrl: 'pages/favourites.html',
