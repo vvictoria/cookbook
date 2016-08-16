@@ -31,6 +31,11 @@ html, body {
     font-family: "Dancing Script", cursive; }
   .header .logo, .footer .logo {
     margin: 15px 0; }
+  .header .navbar-toggle, .footer .navbar-toggle {
+    margin-right: 0; }
+    .header .navbar-toggle i, .footer .navbar-toggle i {
+      margin-top: 4px;
+      font-size: 24px; }
 
 .footer {
   margin-bottom: 0;
@@ -51,7 +56,8 @@ html, body {
     padding-bottom: 72px; }
 
 .navbar {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  min-height: auto; }
   .navbar li:hover {
     background-color: #e7e7e7; }
 
@@ -174,6 +180,7 @@ html, body {
     z-index: 1; }
   .recipe .over-bottom {
     height: 40px;
+    line-height: 40px;
     background-color: #d394ae;
     color: #2d394d;
     position: absolute;
@@ -204,7 +211,7 @@ html, body {
   .header__search, .header__account {
     margin-top: 0; }
   .recipe-name, .recipe-date {
-    font-size: 2.5vw; }
+    font-size: 14px; }
   .ng-scope {
     margin-bottom: 15%; }
   .content__tops-over {

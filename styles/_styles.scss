@@ -39,6 +39,13 @@ html, body {
     .logo {
         margin: 15px 0;
     }
+    .navbar-toggle {
+        margin-right: 0;
+        i {
+            margin-top: 4px;
+            font-size: 24px;
+        }
+    }
 }
 
 .footer {
@@ -64,6 +71,7 @@ html, body {
 
 .navbar {
     margin-bottom: 0;
+    min-height: auto;
     li {
         &:hover {
             background-color: $menu-hover-color;
@@ -206,6 +214,7 @@ html, body {
     }
     .over-bottom {
         height: $spacing*2;
+        line-height: $spacing*2;
         background-color: #d394ae;
         color: $cover-color;
         position: absolute;
@@ -240,7 +249,7 @@ html, body {
         margin-top: 0;
     }
     .recipe-name, .recipe-date {
-        font-size: 2.5vw;
+        font-size: 14px;
     }
     .ng-scope {
         margin-bottom: 15%;
